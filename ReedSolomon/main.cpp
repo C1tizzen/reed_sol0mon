@@ -1,5 +1,3 @@
-/* Сделал сея творение: Дмитрий Павлюк (sa1lent)
- * Дата: 16.12.2021*/
 
 #include <iostream>
 #include "main.h"
@@ -30,14 +28,14 @@ int main() {
      erroneous.reserve(N);
      decoded.reserve(N);
      
-     std::cout << "Оригинальное сообщение:  ";
+     std::cout << "ГЋГ°ГЁГЈГЁГ­Г Г«ГјГ­Г®ГҐ Г±Г®Г®ГЎГ№ГҐГ­ГЁГҐ:  ";
      for (int i = 0; i < msglen; i++) {
          original.push_back(message[i]);
          std::cout << original[i] << " ";
      }
      encoded = rs_encode_msg(original, N-k);
      
-     std::cout << std::endl << "Закодировано:   ";
+     std::cout << std::endl << "Г‡Г ГЄГ®Г¤ГЁГ°Г®ГўГ Г­Г®:   ";
      for (int i = 0; i < encoded.size(); i++) {
          std::cout << encoded[i] << " ";
      }
@@ -48,7 +46,7 @@ int main() {
          erroneous.push_back(encoded[i]);
      }
 
-     std::cout << std::endl << "Ошибочный: ";
+     std::cout << std::endl << "ГЋГёГЁГЎГ®Г·Г­Г»Г©: ";
      srand(time(0));
      for (int i = 0; i < encoded.size(); i++) {
          if (i < (N - k) / 2) {
@@ -61,13 +59,13 @@ int main() {
      gf::print(erroneous);
      
      decoded = rs_decode_msg(erroneous, N-k);
-     std::cout << std::endl << "Расшифровано:   ";
+     std::cout << std::endl << "ГђГ Г±ГёГЁГґГ°Г®ГўГ Г­Г®:   ";
 
      for (int i = 0; i < decoded.size(); i++) {
          std::cout << decoded[i] << " ";
      }
 
-     std::cout << std::endl << "Сообщение после расшифровки:   ";
+     std::cout << std::endl << "Г‘Г®Г®ГЎГ№ГҐГ­ГЁГҐ ГЇГ®Г±Г«ГҐ Г°Г Г±ГёГЁГґГ°Г®ГўГЄГЁ:   ";
      gf::print(decoded, msglen);
      std::cout << std::endl;
 
